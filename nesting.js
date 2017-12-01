@@ -36,8 +36,13 @@ var employees = [{
 //  2. If the employee's first name is Lorie, change her department to 'HR'.
 //  3. Return the updated employee array.
 
-// Code here
-
+function employeeUpdater() {
+  for(i=0;i<employees.length;i++){
+    if(employees[i].firstName==='Theo'){
+      employees.splice([i,1])
+    }
+  } return employees
+}
 
 
 

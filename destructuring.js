@@ -11,7 +11,7 @@ var carDetails = {
   year: 1994
 }
 
-// CODE HERE
+let {color, make, model, year}=carDetails
 
 
 // ========================
@@ -20,8 +20,7 @@ var carDetails = {
 // In the function below named greeting, it is receiving an object as a parameter. Use object destructuring to save the object properties to new variables. The property names are firstName, lastName, and title. Return the concatenated string.
 
 function greeting( obj ) {
-  // CODE HERE
-  
+let {title, firstName, lastName} = obj 
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
 }
 
@@ -31,16 +30,24 @@ function greeting( obj ) {
 
 // Write a function called totalPopulation that will take in an object. That object will have 4 properties named utah, california, texas and arizona. The property values will be numbers. Use object destructuring to save the property values to new variables. Sum up the values and return the total number.
 
-  // CODE HERE
-
+function totalPopulation(obj) {
+let {utah, california, texas, arizona} = obj
+ return utah + california + texas + arizona
+}
 
 // ========================
 
 
 // Write a function called ingredients that will take in an object. This object will have 3 properties named carb, fat, and protein. The property values will be strings. Use object destructuring to save the property values to new variables. Push these new variables to an array and return the array. 
 
-  // CODE HERE
-
+function ingredients(obj){
+ let {carb, fat, protein} = obj
+ var newarr=[]
+ newarr.push(carb)
+ newarr.push(fat)
+ newarr.push(protein)
+ return newarr
+}
 
 // ========================
 
@@ -53,12 +60,23 @@ function greeting( obj ) {
 
 // Write a function called largeNumbers that will take a destructured object as it's parameter. The object properties will be named first, second, and third and their values will be numbers. Find the smallest number of the three and return that number.
 
-  // CODE HERE
+function largeNumbers({first, second, third}){
+  return  Math.min(third, (Math.min(first, second)))
+}
 
-
-// ========================
 
 
 // Write a function called numberGroups that will take a destructured object as it's parameter. The object properties will be named a, b, and c and their values will be arrays of numbers. Find the longest array and return that array. 
 
-  // CODE HERE
+function numberGroups({a, b, c}) {
+  var answer
+  if(a.length>b.length){
+  answer = a
+  } else {
+    answer = b 
+  }
+  if(answer.length>c.length){
+   return answer
+  } else  answer = c
+  return answer
+}
